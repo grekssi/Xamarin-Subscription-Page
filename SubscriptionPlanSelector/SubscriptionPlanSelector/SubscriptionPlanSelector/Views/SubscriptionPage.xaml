@@ -8,125 +8,51 @@
              BackgroundImageSource="PurpleToBlueP.png"
              x:Class="SubscriptionPlanSelector.Views.SubscriptionPage">
     <ContentPage.Content>
-        <Grid VerticalOptions="FillAndExpand">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-            </Grid.RowDefinitions>
-            <Frame BackgroundColor="Transparent" Grid.Row="0">
+        <StackLayout VerticalOptions="FillAndExpand">
+            <Frame BackgroundColor="Transparent">
                 <Image Source="SubscriptionLogo.png" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
             </Frame>
 
-            <Frame BackgroundColor="White" Grid.Row="1" HasShadow="True" CornerRadius="10" Margin="20,0,20,0" Padding="0" HeightRequest="120" VerticalOptions="Start" BorderColor="Black" x:Name="proFrame" Opacity="0">
-                <Grid HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="120"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
+            <StackLayout BindableLayout.ItemsSource="{Binding Offers}" Spacing="20">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate>
+                        <Frame BackgroundColor="White" HasShadow="True" CornerRadius="10" Margin="20,0,20,0" Padding="0" HeightRequest="120" VerticalOptions="Start" BorderColor="Black" x:Name="proFrame" Opacity="1">
+                            <Grid HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="120"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
 
-                    <Image Grid.Column="0" Source="ProText.png" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+                                <Image Grid.Column="0" Source="{Binding Icon}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
 
-                    <StackLayout Grid.Column="1" Orientation="Vertical" HorizontalOptions="CenterAndExpand">
-                        <Image Source="ScaleAbilityIcon.png" HeightRequest="40" HorizontalOptions="Center"/>
-                        <StackLayout Spacing="7" HorizontalOptions="CenterAndExpand">
-                            <Label Text="{Binding TypeValue, StringFormat='{0}%'}" TextColor="Black" FontSize="14" FontAttributes="Bold" HorizontalOptions="Center"/>
-                            <Label Text="{Binding Type}" TextColor="#7D7D7D" FontSize="13" HorizontalOptions="Center"/>
-                        </StackLayout>
-                    </StackLayout>
-                    <StackLayout Grid.Column="2" Orientation="Vertical" Spacing="10" HorizontalOptions="CenterAndExpand">
-                        <Image Source="StorageIcon.png" HeightRequest="40" HorizontalOptions="Center"/>
-                        <StackLayout Spacing="7" HorizontalOptions="CenterAndExpand">
-                            <Label Text="{Binding TypeValue, StringFormat='{0} gb'}" TextColor="Black" FontSize="14" FontAttributes="Bold" HorizontalOptions="Center"/>
-                            <Label Text="{Binding Type}" TextColor="#7D7D7D" FontSize="13" HorizontalOptions="Center"/>
-                        </StackLayout>
-                    </StackLayout>
-                    <StackLayout Grid.Column="3" Orientation="Vertical" Spacing="10" HorizontalOptions="CenterAndExpand">
-                        <Image Source="SpeedIcon.png" HeightRequest="40" HorizontalOptions="Center"/>
-                        <StackLayout Spacing="7" HorizontalOptions="CenterAndExpand">
-                            <Label Text="{Binding TypeValue, StringFormat='{0} mhz'}" TextColor="Black" FontSize="14" FontAttributes="Bold" HorizontalOptions="Center"/>
-                            <Label Text="{Binding Type}" TextColor="#7D7D7D" FontSize="13" HorizontalOptions="Center"/>
-                        </StackLayout>
-                    </StackLayout>
-                </Grid>
-            </Frame>
-
-            <Frame BackgroundColor="White" Grid.Row="2" HasShadow="True" CornerRadius="10" Margin="20, 17 ,20,0" Padding="0" HeightRequest="120" VerticalOptions="Start" BorderColor="Black" x:Name="basicFrame" Opacity="0">
-                <Grid HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="120"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
-
-                    <Image Grid.Column="0" Source="BasicText.png" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
-
-                    <StackLayout Grid.Column="1" Orientation="Vertical" HorizontalOptions="CenterAndExpand">
-                        <Image Source="ScaleAbilityIcon.png" HeightRequest="40" HorizontalOptions="Center"/>
-                        <StackLayout Spacing="7" HorizontalOptions="CenterAndExpand">
-                            <Label Text="{Binding TypeValue, StringFormat='{0}%'}" TextColor="Black" FontSize="14" FontAttributes="Bold" HorizontalOptions="Center"/>
-                            <Label Text="{Binding Type}" TextColor="#7D7D7D" FontSize="13" HorizontalOptions="Center"/>
-                        </StackLayout>
-                    </StackLayout>
-                    <StackLayout Grid.Column="2" Orientation="Vertical" Spacing="10" HorizontalOptions="CenterAndExpand">
-                        <Image Source="StorageIcon.png" HeightRequest="40" HorizontalOptions="Center"/>
-                        <StackLayout Spacing="7" HorizontalOptions="CenterAndExpand">
-                            <Label Text="{Binding TypeValue, StringFormat='{0} gb'}" TextColor="Black" FontSize="14" FontAttributes="Bold" HorizontalOptions="Center"/>
-                            <Label Text="{Binding Type}" TextColor="#7D7D7D" FontSize="13" HorizontalOptions="Center"/>
-                        </StackLayout>
-                    </StackLayout>
-                    <StackLayout Grid.Column="3" Orientation="Vertical" Spacing="10" HorizontalOptions="CenterAndExpand">
-                        <Image Source="SpeedIcon.png" HeightRequest="40" HorizontalOptions="Center"/>
-                        <StackLayout Spacing="7" HorizontalOptions="CenterAndExpand">
-                            <Label Text="{Binding TypeValue, StringFormat='{0} mhz'}" TextColor="Black" FontSize="14" FontAttributes="Bold" HorizontalOptions="Center"/>
-                            <Label Text="{Binding Type}" TextColor="#7D7D7D" FontSize="13" HorizontalOptions="Center"/>
-                        </StackLayout>
-                    </StackLayout>
-                </Grid>
-            </Frame>
-
-            <Frame BackgroundColor="White" Grid.Row="3" HasShadow="True" CornerRadius="10" Margin="20, 17 ,20,0" Padding="0" HeightRequest="120" VerticalOptions="Start" BorderColor="Black" x:Name="freeFrame" Opacity="0">
-                <Frame.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="FreeOptionInitializer"></TapGestureRecognizer>
-                </Frame.GestureRecognizers>
-                <Grid HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="120"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
-
-                    <Image Grid.Column="0" Source="FreeText.png" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
-
-                    <StackLayout Grid.Column="1" Orientation="Vertical" HorizontalOptions="CenterAndExpand">
-                        <Image Source="ScaleAbilityIcon.png" HeightRequest="40" HorizontalOptions="Center"/>
-                        <StackLayout Spacing="7" HorizontalOptions="CenterAndExpand">
-                            <Label Text="{Binding TypeValue, StringFormat='{0}%'}" TextColor="Black" FontSize="14" FontAttributes="Bold" HorizontalOptions="Center"/>
-                            <Label Text="{Binding Type}" TextColor="#7D7D7D" FontSize="13" HorizontalOptions="Center"/>
-                        </StackLayout>
-                    </StackLayout>
-                    <StackLayout Grid.Column="2" Orientation="Vertical" Spacing="10" HorizontalOptions="CenterAndExpand">
-                        <Image Source="StorageIcon.png" HeightRequest="40" HorizontalOptions="Center"/>
-                        <StackLayout Spacing="7" HorizontalOptions="CenterAndExpand">
-                            <Label Text="{Binding TypeValue, StringFormat='{0} gb'}" TextColor="Black" FontSize="14" FontAttributes="Bold" HorizontalOptions="Center"/>
-                            <Label Text="{Binding Type}" TextColor="#7D7D7D" FontSize="13" HorizontalOptions="Center"/>
-                        </StackLayout>
-                    </StackLayout>
-                    <StackLayout Grid.Column="3" Orientation="Vertical" Spacing="10" HorizontalOptions="CenterAndExpand">
-                        <Image Source="SpeedIcon.png" HeightRequest="40" HorizontalOptions="Center"/>
-                        <StackLayout Spacing="7" HorizontalOptions="CenterAndExpand">
-                            <Label Text="{Binding TypeValue, StringFormat='{0} mhz'}" TextColor="Black" FontSize="14" FontAttributes="Bold" HorizontalOptions="Center"/>
-                            <Label Text="{Binding Type}" TextColor="#7D7D7D" FontSize="13" HorizontalOptions="Center"/>
-                        </StackLayout>
-                    </StackLayout>
-                </Grid>
-            </Frame>
-
-        </Grid>
+                                <StackLayout Grid.Column="1" Orientation="Vertical" HorizontalOptions="CenterAndExpand">
+                                    <Image Source="ScaleAbilityIcon.png" HeightRequest="40" HorizontalOptions="Center"/>
+                                    <StackLayout Spacing="3" HorizontalOptions="CenterAndExpand">
+                                        <Label Text="{Binding Scalability, StringFormat='{0} %'}" TextColor="Black" FontSize="14" FontAttributes="Bold" HorizontalOptions="Center"/>
+                                        <Label Text="Scalability" TextColor="#7D7D7D" FontSize="13" HorizontalOptions="Center"/>
+                                    </StackLayout>
+                                </StackLayout>
+                                <StackLayout Grid.Column="2" Orientation="Vertical" Spacing="10" HorizontalOptions="CenterAndExpand">
+                                    <Image Source="StorageIcon.png" HeightRequest="40" HorizontalOptions="Center"/>
+                                    <StackLayout Spacing="3" HorizontalOptions="CenterAndExpand">
+                                        <Label Text="{Binding Storage, StringFormat='{0} gb'}" TextColor="Black" FontSize="14" FontAttributes="Bold" HorizontalOptions="Center"/>
+                                        <Label Text="Storage" TextColor="#7D7D7D" FontSize="13" HorizontalOptions="Center"/>
+                                    </StackLayout>
+                                </StackLayout>
+                                <StackLayout Grid.Column="3" Orientation="Vertical" Spacing="10" HorizontalOptions="CenterAndExpand">
+                                    <Image Source="SpeedIcon.png" HeightRequest="40" HorizontalOptions="Center"/>
+                                    <StackLayout Spacing="3" HorizontalOptions="CenterAndExpand">
+                                        <Label Text="{Binding Speed, StringFormat='{0} mhz'}" TextColor="Black" FontSize="14" FontAttributes="Bold" HorizontalOptions="Center"/>
+                                        <Label Text="Speed" TextColor="#7D7D7D" FontSize="13" HorizontalOptions="Center"/>
+                                    </StackLayout>
+                                </StackLayout>
+                            </Grid>
+                        </Frame>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </StackLayout>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>

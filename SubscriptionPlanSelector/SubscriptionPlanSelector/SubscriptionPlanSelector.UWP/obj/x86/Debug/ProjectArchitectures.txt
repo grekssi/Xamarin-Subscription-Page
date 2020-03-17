@@ -1,1 +1,0 @@
-C:\Users\bedob\source\repos\SubscriptionPlanSelector\SubscriptionPlanSelector\SubscriptionPlanSelector.UWP\SubscriptionPlanSelector.UWP.csproj;x86
