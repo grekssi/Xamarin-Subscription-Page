@@ -13,10 +13,13 @@
                 <Image Source="SubscriptionLogo.png" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
             </Frame>
 
-            <StackLayout BindableLayout.ItemsSource="{Binding Offers}" Spacing="20">
+            <StackLayout BindableLayout.ItemsSource="{Binding Offers}" Spacing="20" x:Name="OffersList">
                 <BindableLayout.ItemTemplate>
                     <DataTemplate>
-                        <Frame BackgroundColor="White" HasShadow="True" CornerRadius="10" Margin="20,0,20,0" Padding="0" HeightRequest="120" VerticalOptions="Start" BorderColor="Black" x:Name="proFrame" Opacity="1">
+                        <Frame BackgroundColor="White" HasShadow="True" CornerRadius="10" Margin="20,0,20,0" Padding="0" HeightRequest="120" VerticalOptions="Start" BorderColor="Black" x:Name="{Binding Name}" Opacity="1">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding OnOfferTapped, Source={x:Reference OffersList}}" CommandParameter="{Binding Name}"/>
+                            </Frame.GestureRecognizers>
                             <Grid HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="120"/>
