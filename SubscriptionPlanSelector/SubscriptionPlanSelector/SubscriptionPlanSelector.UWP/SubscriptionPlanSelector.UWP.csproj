@@ -139,6 +139,10 @@
     <Content Include="ScaleAbilityIcon.png" />
     <Content Include="SpeedIcon.png" />
     <Content Include="StorageIcon.png" />
+    <Content Include="SubscriptionLogo.png">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="xamarin_logo.png" />
     <Content Include="add.png" />
     <Content Include="save.png" />

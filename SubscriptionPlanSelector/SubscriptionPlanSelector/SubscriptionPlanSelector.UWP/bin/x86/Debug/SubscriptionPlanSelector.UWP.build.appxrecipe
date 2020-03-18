@@ -679,6 +679,9 @@
     <AppxPackagedFile Include="C:\Users\bedob\source\repos\SubscriptionPlanSelector\SubscriptionPlanSelector\SubscriptionPlanSelector.UWP\StorageIcon.png">
       <PackagePath>StorageIcon.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\bedob\source\repos\SubscriptionPlanSelector\SubscriptionPlanSelector\SubscriptionPlanSelector.UWP\SubscriptionLogo.png">
+      <PackagePath>SubscriptionLogo.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\bedob\source\repos\SubscriptionPlanSelector\SubscriptionPlanSelector\SubscriptionPlanSelector.UWP\xamarin_logo.png">
       <PackagePath>xamarin_logo.png</PackagePath>
     </AppxPackagedFile>

@@ -17,3 +17,4 @@ C:\Users\bedob\source\repos\SubscriptionPlanSelector\SubscriptionPlanSelector\Su
 C:\Users\bedob\source\repos\SubscriptionPlanSelector\SubscriptionPlanSelector\SubscriptionPlanSelector\obj\Debug\netstandard2.0\ref\SubscriptionPlanSelector.dll
 C:\Users\bedob\source\repos\SubscriptionPlanSelector\SubscriptionPlanSelector\SubscriptionPlanSelector\obj\Debug\netstandard2.0\SubscriptionPlanSelector.pdb
 C:\Users\bedob\source\repos\SubscriptionPlanSelector\SubscriptionPlanSelector\SubscriptionPlanSelector\obj\Debug\netstandard2.0\Views\SubscriptionPage.xaml.g.cs
+C:\Users\bedob\source\repos\SubscriptionPlanSelector\SubscriptionPlanSelector\SubscriptionPlanSelector\obj\Debug\netstandard2.0\Views\SubscriptionPageUWP.xaml.g.cs

@@ -6,6 +6,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 using SubscriptionPlanSelector.Models;
+using Xamarin.Forms.PlatformConfiguration;
 
 namespace SubscriptionPlanSelector.Views
 {
@@ -37,7 +38,15 @@ namespace SubscriptionPlanSelector.Views
                         MenuPages.Add(id, new NavigationPage(new AboutPage()));
                         break;
                     case (int)MenuItemType.Subscribe:
-                        MenuPages.Add(id, new NavigationPage(new SubscriptionPage()));
+                        switch (Device.RuntimePlatform)
+                        {
+                            case Device.Android:
+                                MenuPages.Add(id, new NavigationPage(new SubscriptionPage()));
+                                break;
+                            case Device.UWP:
+                                MenuPages.Add(id, new NavigationPage(new SubscriptionPageUWP()));
+                                break;
+                        }
                         break;
                 }
             }
